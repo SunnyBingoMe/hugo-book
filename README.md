@@ -1,3 +1,5 @@
+Sunny updated: auto search when 404; widen width to 100%; post-meta color to grey; add index.html; change site icon; add search results bg color; add footer license; other minor improvements.
+
 # Hugo Book Theme
 
 [![Hugo](https://img.shields.io/badge/hugo-0.79-blue.svg)](https://gohugo.io)
@@ -39,6 +41,7 @@
 ## Installation
 
 ### Install as git submodule
+
 Navigate to your hugo project root and run:
 
 ```
@@ -56,6 +59,7 @@ hugo server --minify --theme hugo-book
 You can also add this theme as a Hugo module instead of a git submodule.
 
 Start with initializing hugo modules, if not done yet:
+
 ```
 hugo mod init github.com/repo/path
 ```
@@ -314,6 +318,7 @@ There are a few hugo templates inserted in `<head>`
 
 To disable Open Graph inclusion you can create your own empty file `\layouts\_internal\opengraph.html`.
 In fact almost empty not quite empty because an empty file looks like absent for HUGO. For example:
+
 ```
 <!-- -->
 ```
