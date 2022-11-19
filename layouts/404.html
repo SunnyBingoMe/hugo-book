@@ -19,16 +19,27 @@
 
   <body>
     <main class="flex justify-center not-found">
-      <div>
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-        <h3>
-          <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
-        </h3>
+      <div style="margin-top:10%; margin-bottom: 3%;">
+        <h3>404: Page Not Found on <br/> <a href="{{ .Site.Home.RelPermalink }}" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">{{ .Site.Title }}</a></h3>
       </div>
-    </main>
+      <br/>
 
+    </main>
+    {{ if default true .Site.Params.BookSearch }}
+    <div class="book-search"  style="margin-left: 30%; width: 40%; ">
+      <input type="text" id="book-search-input" placeholder="{{ i18n "Search" }}" aria-label="{{ i18n "Search" }}" maxlength="64" data-hotkeys="s/" />
+      <div class="book-search-spinner hidden"></div>
+      <ul id="book-search-results"></ul>
+    </div>
+    {{ end }}
     {{ partial "docs/inject/body" . }}
   </body>
 
   </html>
+
+  <script>
+        window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('book-search-input').value = window.location.pathname.replaceAll('/', '');
+        document.getElementById('book-search-input').focus()
+    });
+  </script>

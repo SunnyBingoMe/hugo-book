@@ -1,0 +1,15 @@
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				{{ range first 20 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+				<li><a href="{{ .RelPermalink }}" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">{{ .Title }}</a></li>
+				<br/>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+</aside>

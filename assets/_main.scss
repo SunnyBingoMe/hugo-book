@@ -189,6 +189,8 @@ body[dir="rtl"] .book-menu {
   position: relative;
   margin: $padding-16 0;
   border-bottom: 1px solid transparent;
+  background-color:#afd5fca2;
+  text-shadow: 0.4px 0.4px LightGray;
 
   input {
     width: 100%;
@@ -219,6 +221,23 @@ body[dir="rtl"] .book-menu {
     border-radius: 50%;
 
     @include spin(1s);
+  }
+  
+  li {
+    margin: 1em 0;
+    position: relative;
+  }
+
+  a {
+    display: block;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+
+  ul {
+    padding-inline-start: $padding-16;
   }
 
   small {

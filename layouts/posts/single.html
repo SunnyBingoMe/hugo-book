@@ -6,6 +6,7 @@
   {{ partial "docs/post-meta" . }}
   {{- .Content -}}
 </article>
+{{ partial "footer-with-license.html" . }}
 {{ end }}
 
 {{ define "toc" }}

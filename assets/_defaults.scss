@@ -14,7 +14,7 @@ $border-radius: $padding-4 !default;
 $body-font-weight: normal !default;
 
 $body-min-width: 20rem !default;
-$container-max-width: 80rem !default;
+$container-max-width: 100% !default;
 
 $header-height: 3.5rem !default;
 $menu-width: 16rem !default;
@@ -35,7 +35,7 @@ $hint-colors: (
   --gray-500: #adb5bd;
 
   --color-link: #0055bb;
-  --color-visited-link: #8440f1;
+  --color-visited-link: #002044;
 
   --body-background: white;
   --body-font-color: black;
@@ -53,7 +53,7 @@ $hint-colors: (
   --gray-500: rgba(255, 255, 255, 0.5);
 
   --color-link: #84b2ff;
-  --color-visited-link: #b88dff;
+  --color-visited-link: #6386c4;
 
   --body-background: #343a40;
   --body-font-color: #e9ecef;

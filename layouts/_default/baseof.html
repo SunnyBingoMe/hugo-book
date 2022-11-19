@@ -74,8 +74,12 @@
 
 {{ define "main" }}
   <article class="markdown">
-    {{- .Content -}}
+    <h1><a href="{{ .RelPermalink }}">{{ partial "docs/title.html" . }}</a></h1>
+      {{ partial "docs/post-meta" . }}
+    <hr style="background:lightgrey"/>
+      {{- .Content -}}
   </article>
+  {{ partial "footer-with-license.html" . }}
 {{ end }}
 
 {{ define "toc" }}
