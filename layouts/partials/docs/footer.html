@@ -23,6 +23,7 @@
 </div>
 
 {{ $script := resources.Get "clipboard.js" | resources.Minify }}
+{{ $script := resources.Get "fastsearch.js" | resources.Minify }}
 {{ with $script.Content }}
   <script>{{ . | safeJS }}</script>
 {{ end }}

@@ -29,20 +29,28 @@
 
     </main>
     {{ if default true .Site.Params.BookSearch }}
-    <div class="book-search"  style="margin-left: 30%; width: 40%; ">
-      <input type="text" id="book-search-input" placeholder="{{ i18n "Search" }}" aria-label="{{ i18n "Search" }}" maxlength="64" data-hotkeys="s/" />
+    <a id="search-btn" style="display: none;" href="javascript:void(0);"><span class="icon-search">捜</span></a>
+    <div id="fastSearch" class="book-search" style="margin-left: 30%; width: 40%;">
+      <input type="text" id="searchInput" tabindex="0" placeholder="{{ i18n "Search" }}" aria-label="{{ i18n "Search" }}" maxlength="64" data-hotkeys="s/" />
       <div class="book-search-spinner hidden"></div>
-      <ul id="book-search-results"></ul>
+      <ul id="searchResults"></ul>
     </div>
+    <script src="/js/fuse.min.js"></script>
     {{ end }}
     {{ partial "docs/inject/body" . }}
   </body>
 
   </html>
 
+  {{ $script := resources.Get "fastsearch.js" | resources.Minify }}
+  {{ with $script.Content }}
+    <script>{{ . | safeJS }}</script>
+  {{ end }}
   <script>
-        window.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('book-search-input').value = window.location.pathname.replaceAll('/', '').replaceAll('%20', ' ');
-        document.getElementById('book-search-input').focus()
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(function(){
+        document.getElementById('searchInput').value = decodeURIComponent(window.location.pathname.replaceAll('/', ''));
+        document.getElementById('searchInput').focus()
+      }, 1000);
     });
   </script>
