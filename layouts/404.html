@@ -20,7 +20,10 @@
   <body>
     <main class="flex justify-center not-found">
       <div style="margin-top:10%; margin-bottom: 3%;">
-        <h3>404: Page Not Found on <br/> <a href="{{ .Site.Home.RelPermalink }}" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">{{ .Site.Title }}</a></h3>
+        <h3>404: Page Not Found on <br/>
+        <a href="{{ .Site.Home.RelPermalink }}" onmouseover="style='text-decoration:underline'" onmouseout="style='text-decoration:none'">{{ .Site.Title }}</a><br/>
+        Hold on, Searching ...
+        </h3>
       </div>
       <br/>
 
@@ -39,7 +42,7 @@
 
   <script>
         window.addEventListener('DOMContentLoaded', () => {
-        document.getElementById('book-search-input').value = window.location.pathname.replaceAll('/', '');
+        document.getElementById('book-search-input').value = window.location.pathname.replaceAll('/', '').replaceAll('%20', ' ');
         document.getElementById('book-search-input').focus()
     });
   </script>
